@@ -1,5 +1,5 @@
  .day1{
-    height: 30vw;
+    height: 45vw;
     width: 130vh;
     /* margin-left: 5px; */
     
@@ -7,6 +7,7 @@
 
 .days{
     height: 25vh;
+    width: 40px;
     
 }
 
@@ -25,4 +26,6 @@
 
 .dayToo{
     width: 20px;
+    height: 40px;
+    background-color: aquamarine;
 }

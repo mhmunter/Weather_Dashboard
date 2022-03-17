@@ -3,7 +3,7 @@
 // var fetchButton = document.getElementById('subBut');
 // var nameValue = document.getElementById('first_name');
 var existDiv = document.getElementById("weather_days");
-
+var existDays = document.getElementById("check");
 
 
 
@@ -24,22 +24,34 @@ fetch("https://api.openweathermap.org/data/2.5/onecall?lat=29.42&lon=-98.49&unit
                 // console.log(base.uvi)
 
                 // listItem.textContent = data[i].html_url;
+                var base = responseData.daily[0]
+                var timestamp = base.dt
+                var date = new Date(timestamp*1000)
+
+                 var total = ''
+                total =  '\nDate: ' + date + '\nTemp: ' + base.temp.day + '\nWind: ' + base.wind_speed + '\nHumidity: ' + base.humidity + '\nUvi: ' + base.uvi 
 
 
-                for (i = 0; i < 5; i++){
+                existDiv.innerHTML = total
+
+                var whatEver = ''
+
+                for (i = 1; i < 5; i++){
                     var base = responseData.daily[i]
                     var timestamp = base.dt
                     var date = new Date(timestamp*1000)
-                    total = document.createElement('span') 
-                    total.classList.add('dayToo');                
-                    total.textContent =  date + '\nTemp: ' + base.temp.day + '\nWind: ' + base.wind_speed + '\nHumidity: ' + base.humidity + '\nUvi: ' + base.uvi 
+                    whatEver = document.createElement('span') 
+                    whatEver.classList.add('dayToo');                
+                    whatEver = document.createTextNode('\nDate: ' + date + '\nTemp: ' + base.temp.day + '\nWind: ' + base.wind_speed + '\nHumidity: ' + base.humidity + '\nUvi: ' + base.uvi)
+                    // total = document.createElement('br') 
                     // total.textContent = base.wind_speed
                     // total.textContent = base.humidity
                     // total.textContent = base.uvi
                     // total.textContent = date
-                    // total.textContent = base.icon
-                    existDiv.appendChild(total)
+                    // total.textConnt = base.icon
+                    existDays.appendChild(whatEver)
                     // existDiv.textContent = "</span>"
+                    
                     
                    
                 }
@@ -48,6 +60,9 @@ fetch("https://api.openweathermap.org/data/2.5/onecall?lat=29.42&lon=-98.49&unit
 
             });
         }
+        //'col ','l8'
+        //,'teal ','lighten-2'
+
 
 
 
