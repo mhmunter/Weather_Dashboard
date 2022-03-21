@@ -1,13 +1,15 @@
  .day1{
-    height: 45vw;
-    width: 130vh;
+    height: 40vw;
+    width: 90vh;
     /* margin-left: 5px; */
     
 } 
 
 .days{
-    height: 25vh;
-    width: 40px;
+    height: 30vh;
+    width: 110vw;
+    
+grid-row:auto
     
 }
 
@@ -21,11 +23,11 @@
 } */
 .submission{
     height: 100vh;
-    width: 100px;
+    width: 70px;
 }
 
 .dayToo{
-    width: 20px;
+    width: 15px;
     height: 40px;
     background-color: aquamarine;
 }

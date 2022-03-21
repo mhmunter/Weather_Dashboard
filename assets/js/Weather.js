@@ -4,7 +4,7 @@
 // var nameValue = document.getElementById('first_name');
 var existDiv = document.getElementById("weather_days");
 var existDays = document.getElementById("check");
-
+var display = document.getElementsByClassName("days")
 
 
 var apiCall = function(){
@@ -29,7 +29,7 @@ fetch("https://api.openweathermap.org/data/2.5/onecall?lat=29.42&lon=-98.49&unit
                 var date = new Date(timestamp*1000)
 
                  var total = ''
-                total =  '\nDate: ' + date + '\nTemp: ' + base.temp.day + '\nWind: ' + base.wind_speed + '\nHumidity: ' + base.humidity + '\nUvi: ' + base.uvi 
+                total = '   ' +  '\nDate: ' + date + '\nTemp: ' + base.temp.day + '\nWind: ' + base.wind_speed + '\nHumidity: ' + base.humidity + '\nUvi:' + base.uvi + '   '
 
 
                 existDiv.innerHTML = total
